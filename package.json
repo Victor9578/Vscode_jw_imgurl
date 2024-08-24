@@ -1,0 +1,65 @@
+{
+	"name": "jw-imgurl",
+	"displayName": "jw-imgurl",
+	"description": "Jw's 图库",
+	"version": "1.0.0",
+	"publisher": "Jaywxl",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"engines": {
+		"vscode": "^1.92.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "jw-imgurl.uploadimage",
+				"title": "Upload Image"
+			},
+			{
+				"command": "jw-imgurl.uploadimagefromexplorer",
+				"title": "Upload Image From Explorer"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "jw-imgurl.uploadimagefromexplorer",
+					"when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp)$/",
+					"group": "imgurl@1"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "jw-imgurl.uploadimagefromexplorer",
+				"key": "alt+u",
+				"when": "explorerViewletVisible && filesExplorerFocus && resourceExtname =~ /\\.(png|jpg|jpeg|webp)$/i"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^18.19.45",
+		"@types/vscode": "^1.92.0",
+		"@typescript-eslint/eslint-plugin": "^7.18.0",
+		"@typescript-eslint/parser": "^7.18.0",
+		"eslint": "^8.57.0",
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"axios": "^1.7.5",
+		"form-data": "^4.0.0"
+	}
+}
