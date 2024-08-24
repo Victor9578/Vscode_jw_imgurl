@@ -6,7 +6,7 @@
 	"publisher": "Jaywxl",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/Victor9578/Vscode_jw_imgurl.git"
 	},
 	"engines": {
 		"vscode": "^1.92.0"
